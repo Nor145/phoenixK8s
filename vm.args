@@ -1,0 +1,2 @@
+-name phoenixkubernetes@${MY_POD_IP}
+-setcookie mymagiccookie

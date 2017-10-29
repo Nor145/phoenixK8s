@@ -18,3 +18,8 @@ config :phoenixkubernetes, Phoenixkubernetes.Repo,
   database: "${DB_NAME}",
   pool_size: 20
 
+config :peerage, via: Peerage.Via.Dns,
+  dns_name: "phoenixkubernetes-service-headless.default.svc.cluster.local",
+  app_name: "phoenixkubernetes",
+  interval: 5
+

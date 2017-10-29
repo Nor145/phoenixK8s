@@ -20,7 +20,8 @@ defmodule Phoenixkubernetes.Mixfile do
   def application do
     [
       mod: {Phoenixkubernetes, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      # applications: [:peerage]
     ]
   end
 
@@ -42,7 +43,8 @@ defmodule Phoenixkubernetes.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.0", override: true},
-      {:mix_docker, "~> 0.3.0"}
+      {:mix_docker, "~> 0.3.0"},
+      {:peerage, "~> 1.0"}
     ]
   end
 
