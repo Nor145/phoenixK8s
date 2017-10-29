@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: phoenixkubernetes-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: phoenixkubernetes
+    spec:
+      containers:
+        - name: phoenixkubernetes
+          image: phoenixkubernetes:release
+          ports:
+            - containerPort: 8000
+          args: ["foreground"]
+          env:
+            - name: HOST
+              value: "example.com"
+            - name: SECRET_KEY_BASE
+              value: "highlysecretkey"
+            - name: DB_USERNAME
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "postgres"
+            - name: DB_NAME
+              value: "postgres"
+            - name: DB_HOSTNAME
+              value: "10.0.2.2"
